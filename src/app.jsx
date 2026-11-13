@@ -10,12 +10,12 @@ const filters = [
 ];
 
 const wallPhotos = [
-  "https://images.unsplash.com/photo-1777670881319-d304133879fb?crop=faces&fit=crop&w=320&h=400&q=80",
-  "https://images.unsplash.com/photo-1763651958791-0877a41fbb8f?crop=faces&fit=crop&w=360&h=280&q=80",
-  "https://images.unsplash.com/photo-1772723246474-60568f39cbd9?crop=faces&fit=crop&w=320&h=360&q=80",
-  "https://images.unsplash.com/photo-1777670879437-1b94aeb0e1f5?crop=faces&fit=crop&w=300&h=400&q=80",
-  "https://images.unsplash.com/photo-1763651958358-c71aa2da72f2?crop=faces&fit=crop&w=360&h=300&q=80",
-  "https://images.unsplash.com/photo-1763651963540-8e5e52ebb4d6?crop=faces&fit=crop&w=320&h=360&q=80",
+  `${import.meta.env.BASE_URL}wall/1.jpg`,
+  `${import.meta.env.BASE_URL}wall/2.jpg`,
+  `${import.meta.env.BASE_URL}wall/3.jpg`,
+  `${import.meta.env.BASE_URL}wall/4.jpg`,
+  `${import.meta.env.BASE_URL}wall/5.jpg`,
+  `${import.meta.env.BASE_URL}wall/6.jpg`,
 ];
 
 function CameraIcon() {
