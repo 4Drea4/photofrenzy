@@ -15,7 +15,7 @@ const wallPhotos = [
   `${import.meta.env.BASE_URL}wall/3.jpeg`,
   `${import.meta.env.BASE_URL}wall/4.jpeg`,
   `${import.meta.env.BASE_URL}wall/5.jpeg`,
-  `${import.meta.env.BASE_URL}wall/6.jpg`,
+  `${import.meta.env.BASE_URL}wall/6.jpeg`,
 ];
 
 function CameraIcon() {
