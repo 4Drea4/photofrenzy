@@ -216,8 +216,8 @@ export default function App() {
     event.target.value = "";
   };
 
-  const downloadStrip = async () => {
-    if (!photos.length) return;
+  const buildStrip = async () => {
+    if (!photos.length) return null;
     const loaded = await Promise.all(
       photos.map(
         (source) =>
@@ -232,7 +232,7 @@ export default function App() {
     canvas.width = 720;
     canvas.height = 220 + loaded.length * 505;
     const context = canvas.getContext("2d");
-    if (!context) return;
+    if (!context) return null;
     context.fillStyle = frameColor;
     context.fillRect(0, 0, canvas.width, canvas.height);
     loaded.forEach((image, index) => {
@@ -259,11 +259,38 @@ export default function App() {
     context.fillText("PHOTO FRENZY", 360, canvas.height - 92);
     context.font = "18px Arial";
     context.fillText(new Date().toLocaleDateString(), 360, canvas.height - 54);
+    return canvas;
+  };
+  
+  const downloadStrip = async () => {
+    const canvas = await buildStrip();
+    if (!canvas) return;
     const link = document.createElement("a");
     link.download = "photo-frenzy-strip.jpg";
     link.href = canvas.toDataURL("image/jpeg", 0.95);
     link.click();
   };
+  
+  const canShare =
+  typeof navigator !== "undefined" &&
+  !!navigator.canShare &&
+  navigator.canShare({
+    files: [new File([""], "test.jpg", { type: "image/jpeg" })],
+  });
+
+const shareStrip = async () => {
+  const canvas = await buildStrip();
+  if (!canvas) return;
+  const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/jpeg", 0.95));
+  const file = new File([blob], "photo-frenzy-strip.jpg", { type: "image/jpeg" });
+  try {
+    await navigator.share({ files: [file], title: "My Photo Frenzy strip" });
+  } catch {
+    // person closed the share sheet; nothing to do
+  }
+};
+  
+    
 
   const leaveBooth = () => {
     streamRef.current?.getTracks().forEach((track) => track.stop());
@@ -480,6 +507,16 @@ export default function App() {
               >
                 download my strip ↓
               </button>
+              {canShare && (
+                <button
+                  className="share-strip"
+                  type="button"
+                  onClick={shareStrip}
+                  disabled={!photos.length}
+                >
+                  save or send to my phone ♡
+                </button>
+              )}
               {photos.length > 0 && (
                 <button className="clear-strip" type="button" onClick={() => setPhotos([])}>
                   clear &amp; start over
