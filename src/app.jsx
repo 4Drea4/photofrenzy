@@ -307,7 +307,7 @@ export default function App() {
               <CameraIcon />
             </span>
             <div className="landing-copy">
-              <p className="scribble">welcome to the frenzy ♡</p>
+              <p className="scribble">welcome to the Friendsgiving Frenzy ♡</p>
               <h1>
                 Your Online
                 <br />
