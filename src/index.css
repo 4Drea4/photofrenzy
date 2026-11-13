@@ -4,8 +4,8 @@
 @layer base {
   :root {
     font-family: "DM Sans", sans-serif;
-    color: #1e1a17;
-    background: #f4efe5;
+    color: #3a1f2b;
+    background: #fdf3f0;
     font-synthesis: none;
   }
 
@@ -22,7 +22,7 @@
   }
   button:focus-visible,
   a:focus-visible {
-    outline: 3px solid #e4a424;
+    outline: 3px solid #f7c948;
     outline-offset: 3px;
   }
 }
@@ -36,7 +36,7 @@ button {
   overflow: hidden;
   background:
     repeating-linear-gradient(0deg, rgba(70, 49, 32, 0.025) 0 1px, transparent 1px 4px),
-    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.8), transparent 30%), #f4efe5;
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.8), transparent 30%), #fdf3f0;
 }
 
 .site-header {
@@ -44,13 +44,13 @@ button {
   height: 68px;
   margin: 18px auto 0;
   padding: 0 16px 0 22px;
-  border: 1px solid #d8a76a;
+  border: 1px solid #f0b8c8;
   border-radius: 40px;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 24px;
-  background: rgba(248, 244, 235, 0.84);
+  background: rgba(255, 248, 245, 0.84);
   backdrop-filter: blur(8px);
   position: relative;
   z-index: 20;
@@ -73,36 +73,36 @@ button {
   display: grid;
   place-items: center;
   margin-right: -2px;
-  color: #f3e6c9;
+  color: #fff8f5;
   font-family: Georgia, serif;
   font-size: 21px;
   font-style: normal;
   font-weight: 900;
   line-height: 1;
-  text-shadow: 1px 1px 0 #191512;
-  border: 1px solid #29221d;
+  text-shadow: 1px 1px 0 #3a1f2b;
+  border: 1px solid #3a1f2b;
   transform: rotate(-3deg);
 }
 .logo .logo-0 {
-  background: #bf3823;
+  background: #ec5f8f;
 }
 .logo .logo-1 {
-  background: #df9e22;
+  background: #f7c948;
   transform: rotate(3deg);
 }
 .logo .logo-2 {
-  background: #3f7895;
+  background: #6fb3d9;
 }
 .logo .logo-3 {
-  background: #443c31;
+  background: #8a5d6c;
   transform: rotate(4deg);
 }
 .logo .logo-4 {
-  background: #bd4b28;
+  background: #d94a7a;
 }
 .logo b {
   margin-left: 4px;
-  color: #181411;
+  color: #3a1f2b;
   font-family: "DM Mono", monospace;
   font-size: 13px;
   letter-spacing: -1px;
@@ -117,7 +117,7 @@ button {
 .site-header nav button {
   border: 0;
   background: none;
-  color: #211d19;
+  color: #3a1f2b;
   text-decoration: none;
   font-size: 13px;
   font-weight: 600;
@@ -126,21 +126,21 @@ button {
 }
 .site-header nav a:hover,
 .site-header nav button:hover {
-  color: #c94626;
+  color: #ec5f8f;
 }
 .header-cta {
   justify-self: end;
   border: 0;
   border-radius: 30px;
   padding: 13px 25px;
-  background: #1d1916;
-  color: #fff8ec;
+  background: #3a1f2b;
+  color: #fff8f5;
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
 }
 .header-cta span {
-  color: #f3b51e;
+  color: #f7c948;
 }
 
 .landing {
@@ -153,7 +153,7 @@ button {
   align-items: center;
   gap: 20px;
   position: relative;
-  border-top: 1px dashed rgba(187, 99, 42, 0.38);
+  border-top: 1px dashed rgba(236, 95, 143, 0.35);
   border-bottom: 1px solid rgba(90, 72, 58, 0.18);
 }
 
@@ -163,7 +163,7 @@ button {
   z-index: 2;
 }
 .scribble {
-  color: #c94626;
+  color: #ec5f8f;
   font-family: "Special Elite", cursive;
   font-size: 16px;
   letter-spacing: 0.5px;
@@ -180,9 +180,9 @@ button {
 }
 .landing h1 em,
 .studio-heading h1 em {
-  color: #c84b2c;
+  color: #ec5f8f;
   font-style: normal;
-  background: linear-gradient(transparent 72%, #ddb164 72%);
+  background: linear-gradient(transparent 72%, #fbe08a 72%);
 }
 .lead {
   max-width: 360px;
@@ -194,7 +194,7 @@ button {
 .body-copy {
   max-width: 370px;
   margin-bottom: 27px;
-  color: #5f554d;
+  color: #8a5d6c;
   font-size: 13px;
   line-height: 1.75;
 }
@@ -205,9 +205,9 @@ button {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: #c94726;
+  background: #ec5f8f;
   color: white;
-  box-shadow: inset 0 -2px 0 rgba(90, 23, 8, 0.18);
+  box-shadow: inset 0 -2px 0 rgba(122, 20, 60, 0.2);
   font-weight: 700;
   cursor: pointer;
   transition:
@@ -216,7 +216,7 @@ button {
 }
 .primary-button:hover {
   transform: translateY(-2px);
-  background: #b93b1d;
+  background: #d94a7a;
 }
 .primary-button svg {
   width: 21px;
@@ -231,7 +231,7 @@ button {
   width: fit-content;
   display: block;
   margin-top: 13px;
-  color: #564c45;
+  color: #8a5d6c;
   font-size: 12px;
   text-underline-offset: 5px;
 }
@@ -240,12 +240,12 @@ button {
   position: absolute;
   top: 25px;
   left: 5px;
-  color: #302b26;
+  color: #3a1f2b;
   transform: rotate(-13deg);
 }
 .corner-sticker svg {
   width: 29px;
-  fill: #d9c28d;
+  fill: #f9c8d8;
   stroke: currentColor;
   stroke-width: 1.5;
 }
@@ -269,7 +269,7 @@ button {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: #d7cbb7;
+  background: #f9d9e3;
   position: relative;
   z-index: 2;
 }
@@ -300,14 +300,14 @@ button {
 }
 .curtain {
   display: flex;
-  background: #5c1814;
+  background: #a83a63;
   box-shadow: inset -15px 0 20px rgba(0, 0, 0, 0.35);
   position: relative;
   z-index: 2;
 }
 .curtain i {
   flex: 1;
-  background: linear-gradient(90deg, #37100d, #821f19 50%, #43100e);
+  background: linear-gradient(90deg, #7a2347, #d4577f 50%, #8a2a50);
 }
 .curtain::after {
   content: "";
@@ -316,7 +316,7 @@ button {
   top: 0;
   width: 42px;
   height: 100%;
-  background: linear-gradient(90deg, #2f0b0a, #781c18, #33100e);
+  background: linear-gradient(90deg, #6b1d3d, #c24a74, #7a2347);
   clip-path: polygon(0 0, 100% 2%, 65% 20%, 100% 38%, 65% 56%, 100% 74%, 62% 92%, 90% 100%, 0 100%);
 }
 .booth-inside {
@@ -371,7 +371,7 @@ button {
   position: absolute;
   top: 135px;
   left: 50%;
-  background: #f7efe1;
+  background: #fff4ee;
   transform: translateX(-50%) rotate(2deg);
   box-shadow: 2px 4px 7px rgba(0, 0, 0, 0.3);
 }
@@ -384,7 +384,7 @@ button {
 .mini-strip b {
   display: block;
   text-align: center;
-  color: #c23f25;
+  color: #ec5f8f;
   font-size: 8px;
 }
 .booth-floor {
@@ -397,10 +397,10 @@ button {
   height: 575px;
   padding: 30px 28px 22px;
   align-self: center;
-  border: 1.5px dashed #d3a881;
+  border: 1.5px dashed #f0b8c8;
   border-radius: 32px;
   position: relative;
-  background: rgba(255, 253, 247, 0.42);
+  background: rgba(255, 248, 245, 0.55);
 }
 .wall-heading {
   display: flex;
@@ -408,15 +408,15 @@ button {
   align-items: start;
 }
 .wall-heading span {
-  color: #b93c20;
+  color: #ec5f8f;
   font-family: "Special Elite", cursive;
   font-size: 14px;
 }
 .wall-heading b {
   margin: -40px -35px 0 0;
   padding: 14px 8px;
-  color: #c43022;
-  background: #f2c32c;
+  color: #ec5f8f;
+  background: #f7c948;
   font-family: "Special Elite", cursive;
   font-size: 14px;
   clip-path: polygon(
@@ -450,7 +450,7 @@ button {
 }
 .photo-wall > p svg {
   width: 14px;
-  fill: #cf9a5f;
+  fill: #f9a8c4;
   stroke: #211;
   stroke-width: 1.4;
 }
@@ -555,15 +555,15 @@ button {
 .how-grid article {
   min-height: 180px;
   padding: 28px;
-  border: 1px solid #cfbba3;
+  border: 1px solid #f0b8c8;
   border-radius: 8px;
-  background: #f9f4ea;
+  background: #fff8f5;
 }
 .how-grid article:nth-child(2) {
   transform: rotate(-1deg);
 }
 .how-grid b {
-  color: #c84626;
+  color: #ec5f8f;
   font-family: "DM Mono", monospace;
   font-size: 12px;
 }
@@ -574,7 +574,7 @@ button {
   font-weight: 400;
 }
 .how-grid p {
-  color: #71645b;
+  color: #8a5d6c;
   font-size: 12px;
   line-height: 1.6;
 }
@@ -594,7 +594,7 @@ button {
   justify-self: start;
   border: 0;
   background: none;
-  color: #645950;
+  color: #8a5d6c;
   font-size: 12px;
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -609,7 +609,7 @@ button {
 }
 .studio-heading > span {
   justify-self: end;
-  color: #8c7d71;
+  color: #8a5d6c;
   font-family: "DM Mono", monospace;
   font-size: 10px;
 }
@@ -633,14 +633,14 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #2b2723;
+  color: #3a1f2b;
   font-family: "DM Mono", monospace;
   font-size: 9px;
 }
 .console-top i {
   padding: 4px 7px;
-  color: #e7ad35;
-  background: #24221e;
+  color: #f7c948;
+  background: #3a1f2b;
   font-size: 8px;
   font-style: normal;
 }
@@ -648,7 +648,7 @@ button {
   aspect-ratio: 4 / 3;
   overflow: hidden;
   position: relative;
-  background: #1d1b19;
+  background: #3a1f2b;
   border: 7px inset #5d5b55;
 }
 .camera-screen video {
@@ -676,7 +676,7 @@ button {
   width: 47px;
   margin-bottom: 15px;
   fill: none;
-  stroke: #d7a64a;
+  stroke: #f7c948;
   stroke-width: 1.4;
 }
 .camera-message b {
@@ -745,14 +745,14 @@ button {
 .filter-options button {
   border: 1px solid #44413c;
   padding: 6px 9px;
-  color: #24211e;
+  color: #3a1f2b;
   background: #bbb6aa;
   font-size: 9px;
   cursor: pointer;
 }
 .filter-options button.active {
-  color: #fff8e9;
-  background: #bf4327;
+  color: #fff8f5;
+  background: #ec5f8f;
 }
 .filter-options button:disabled {
   cursor: not-allowed;
@@ -768,9 +768,9 @@ button {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: #c84626;
+  background: #ec5f8f;
   color: white;
-  box-shadow: inset 0 -4px 0 rgba(81, 18, 7, 0.25);
+  box-shadow: inset 0 -4px 0 rgba(122, 20, 60, 0.25);
   font-weight: 700;
   cursor: pointer;
 }
@@ -795,7 +795,7 @@ button {
 .upload-button {
   display: block;
   margin-top: 11px;
-  color: #302d29;
+  color: #3a1f2b;
   text-align: center;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -818,7 +818,7 @@ button {
   font-size: 13px;
 }
 .workbench-title span {
-  color: #88796e;
+  color: #8a5d6c;
   font-family: "DM Mono", monospace;
   font-size: 8px;
 }
@@ -837,7 +837,7 @@ button {
   cursor: pointer;
 }
 .frame-swatches button.active {
-  border-color: #e4a424;
+  border-color: #f7c948;
 }
 .result-strip {
   width: 210px;
@@ -857,7 +857,7 @@ button {
 .empty-photo {
   display: grid;
   place-items: center;
-  color: #aa9e91;
+  color: #c48ba1;
   background:
     linear-gradient(
       45deg,
@@ -865,7 +865,7 @@ button {
       transparent 25% 75%,
       rgba(255, 255, 255, 0.2) 75%
     ),
-    #d9d1c4;
+    #f6dfe6;
   background-size: 16px 16px;
   font-family: "Special Elite", cursive;
 }
@@ -879,7 +879,7 @@ button {
   border: 0;
   border-radius: 30px;
   padding: 13px;
-  background: #1f1b18;
+  background: #3a1f2b;
   color: white;
   font-size: 11px;
   font-weight: 700;
@@ -893,7 +893,7 @@ button {
   margin-top: 12px;
   border: 0;
   background: none;
-  color: #75685e;
+  color: #8a5d6c;
   font-size: 9px;
   text-decoration: underline;
   cursor: pointer;
@@ -903,11 +903,11 @@ footer {
   width: min(1120px, calc(100% - 40px));
   min-height: 80px;
   margin: 0 auto;
-  border-top: 1px dashed #c9ad8e;
+  border-top: 1px dashed #f0b8c8;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #796c62;
+  color: #8a5d6c;
   font-family: "DM Mono", monospace;
   font-size: 9px;
 }

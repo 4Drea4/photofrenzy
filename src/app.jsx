@@ -10,12 +10,13 @@ const filters = [
 ];
 
 const wallPhotos = [
-  `${import.meta.env.BASE_URL}wall/1.jpg`,
-  `${import.meta.env.BASE_URL}wall/2.jpg`,
-  `${import.meta.env.BASE_URL}wall/3.jpg`,
-  `${import.meta.env.BASE_URL}wall/4.jpg`,
-  `${import.meta.env.BASE_URL}wall/5.jpg`,
-  `${import.meta.env.BASE_URL}wall/6.jpg`,
+  `${import.meta.env.BASE_URL}wall/1.jpeg`,
+  `${import.meta.env.BASE_URL}wall/2.jpeg`,
+  `${import.meta.env.BASE_URL}wall/3.jpeg`,
+  `${import.meta.env.BASE_URL}wall/4.jpeg`,
+  `${import.meta.env.BASE_URL}wall/5.jpeg`,
+  `${import.meta.env.BASE_URL}wall/6.jpeg`,
+  `${import.meta.env.BASE_URL}wall/7.jpeg`,
 ];
 
 function CameraIcon() {
@@ -108,7 +109,7 @@ export default function App() {
   const [cameraReady, setCameraReady] = useState(false);
   const [cameraError, setCameraError] = useState("");
   const [filter, setFilter] = useState(filters[0]);
-  const [frameColor, setFrameColor] = useState("#f7efe1");
+  const [frameColor, setFrameColor] = useState("#fff4ee");
   const [photos, setPhotos] = useState([]);
   const [countdown, setCountdown] = useState(null);
   const [shooting, setShooting] = useState(false);
@@ -252,7 +253,7 @@ export default function App() {
         height,
       );
     });
-    context.fillStyle = frameColor === "#171411" ? "#f7efe1" : "#191511";
+    context.fillStyle = frameColor === "#3a1f2b" ? "#fff4ee" : "#3a1f2b";
     context.textAlign = "center";
     context.font = "800 36px Arial";
     context.fillText("PHOTO FRENZY", 360, canvas.height - 92);
@@ -314,11 +315,11 @@ export default function App() {
                 <em>Photobooth</em>
               </h1>
               <p className="lead">
-                Strike a pose, catch the flash, and walk away with a strip worth keeping.
+                Grab a friend and Strike a pose!
               </p>
               <p className="body-copy">
                 Photo Frenzy turns your phone or laptop camera into a retro photo-strip booth. Pick
-                a filter and frame, then download it instantly—no account, no uploads, no fuss.
+                a filter and frame, then download it instantly.
               </p>
               <button className="primary-button" type="button" onClick={enterBooth}>
                 <CameraIcon /> Step into the booth <span>→</span>
@@ -448,7 +449,7 @@ export default function App() {
                 <span>choose paper</span>
               </div>
               <div className="frame-swatches">
-                {["#f7efe1", "#d64a2c", "#246aa5", "#171411"].map((color) => (
+                {["#fff4ee", "#f9a8c4", "#a8d8ea", "#3a1f2b"].map((color) => (
                   <button
                     key={color}
                     type="button"
