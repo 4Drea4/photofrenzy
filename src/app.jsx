@@ -8,14 +8,27 @@ const filters = [
   { label: "Film", css: "sepia(.28) contrast(1.13) saturate(.8)" },
   { label: "B&W", css: "grayscale(1) contrast(1.18)" },
 ];
-
+const themes = {
+  cute: {
+    label: "Cute ♡",
+    swatches: ["#fff4ee", "#f9a8c4", "#a8d8ea", "#3a1f2b"],
+    titleFont: '800 36px Arial',
+    dateFont: '18px Arial',
+  },
+  elegant: {
+    label: "Elegant ✦",
+    swatches: ["#fbf8f1", "#8aa5c0", "#fdf0b9", "#5c1520"],
+    titleFont: '500 40px "Playfair Display", Georgia, serif',
+    dateFont: 'italic 500 20px "Playfair Display", Georgia, serif',
+  },
+};
 const wallPhotos = [
   `${import.meta.env.BASE_URL}wall/1.jpeg`,
   `${import.meta.env.BASE_URL}wall/2.jpeg`,
   `${import.meta.env.BASE_URL}wall/3.jpeg`,
   `${import.meta.env.BASE_URL}wall/4.jpeg`,
   `${import.meta.env.BASE_URL}wall/5.jpeg`,
-  `${import.meta.env.BASE_URL}wall/6.jpg`,
+  `${import.meta.env.BASE_URL}wall/6.jpeg`,
 ];
 
 function CameraIcon() {
@@ -108,11 +121,19 @@ export default function App() {
   const [cameraReady, setCameraReady] = useState(false);
   const [cameraError, setCameraError] = useState("");
   const [filter, setFilter] = useState(filters[0]);
-  const [frameColor, setFrameColor] = useState("#fff4ee");
-  const [photos, setPhotos] = useState([]);
+  const [frameColor, setFrameColor] = useState(themes.cute.swatches[0]);  const [photos, setPhotos] = useState([]);
   const [countdown, setCountdown] = useState(null);
   const [shooting, setShooting] = useState(false);
+  const [theme, setTheme] = useState("cute");
 
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
+  
+  const switchTheme = (name) => {
+    setTheme(name);
+    setFrameColor(themes[name].swatches[0]);
+  };
   useEffect(() => {
     return () => streamRef.current?.getTracks().forEach((track) => track.stop());
   }, []);
@@ -252,12 +273,13 @@ export default function App() {
         height,
       );
     });
-    context.fillStyle = frameColor === "#3a1f2b" ? "#fff4ee" : "#3a1f2b";
-    context.textAlign = "center";
-    context.font = "800 36px Arial";
-    context.fillText("PHOTO FRENZY", 360, canvas.height - 92);
-    context.font = "18px Arial";
-    context.fillText(new Date().toLocaleDateString(), 360, canvas.height - 54);
+    const t = themes[theme];
+context.fillStyle = frameColor === t.swatches[3] ? t.swatches[0] : t.swatches[3];
+context.textAlign = "center";
+context.font = t.titleFont;
+context.fillText("PHOTO FRENZY", 360, canvas.height - 92);
+context.font = t.dateFont;
+context.fillText(new Date().toLocaleDateString(), 360, canvas.height - 54);
     return canvas;
   };
   
@@ -475,7 +497,7 @@ const shareStrip = async () => {
                 <span>choose paper</span>
               </div>
               <div className="frame-swatches">
-                {["#fff4ee", "#f9a8c4", "#a8d8ea", "#3a1f2b"].map((color) => (
+              {themes[theme].swatches.map((color) => (
                   <button
                     key={color}
                     type="button"
@@ -525,7 +547,19 @@ const shareStrip = async () => {
           </div>
         </section>
       )}
-
+  <div className="theme-toggle" role="group" aria-label="Booth style">
+  {Object.entries(themes).map(([key, item]) => (
+    <button
+      key={key}
+      type="button"
+      className={theme === key ? "active" : ""}
+      onClick={() => switchTheme(key)}
+      disabled={shooting}
+    >
+      {item.label}
+    </button>
+  ))}
+</div>
       <footer>
         <Logo />
         <p>Photos stay on your device. Always.</p>
